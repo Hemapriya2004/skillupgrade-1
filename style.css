@@ -1,0 +1,221 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Body and Header */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #111; /* Dark Background */
+    color: #ddd; /* Light Text */
+    overflow-x: hidden;
+}
+
+header {
+    background: #000; /* Black Background */
+    color: #00bcd4; /* Bright Cyan */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    animation: slideIn 1s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #00bcd4; /* Bright Cyan */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    background: #00bcd4; /* Bright Cyan */
+    color: #000; /* Black */
+    transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+    background: #1e1e1e; /* Dark Grey Background */
+    margin-top: 80px;
+    position: relative;
+}
+
+section:nth-of-type(odd) {
+    background: #333; /* Medium Grey Background */
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: #00bcd4; /* Bright Cyan */
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 60px;
+    background: #00bcd4; /* Bright Cyan */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bio-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.bio-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    line-height: 1.8;
+    color: #ddd; /* Light Text */
+}
+
+/* Skills */
+.skill {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00bcd4; /* Bright Cyan */
+    border-radius: 30px;
+    color: #000; /* Black */
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: bounceIn 1s ease-out;
+}
+
+.skill:hover {
+    background: #0097a7; /* Darker Cyan */
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Projects */
+.project {
+    background: #1e1e1e; /* Dark Grey Background */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+.project h3 {
+    margin-bottom: 0.5rem;
+    color: #00bcd4; /* Bright Cyan */
+}
+
+/* Footer */
+footer {
+    background: #000; /* Black Background */
+    color: #00bcd4; /* Bright Cyan */
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
